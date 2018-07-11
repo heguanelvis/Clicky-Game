@@ -1,17 +1,13 @@
 import React from 'react';
 import classes from './MyJumbotron.css';
-import { Jumbotron, Button } from 'reactstrap';
+import './MyJumbotron.css';
+import { Jumbotron } from 'reactstrap';
 
 const myJumbotron = props => {
     return(
-    <Jumbotron>
-        <h1 className="display-3">Hello, world!</h1>
-        <p className="lead">This is a simple hero unit, a simple Jumbotron-style component for calling extra attention to featured content or information.</p>
-        <hr className="my-2" />
-        <p>It uses utility classes for typgraphy and spacing to space content out within the larger container.</p>
-        <p className="lead">
-            <Button color="primary">Learn More</Button>
-        </p>
+    <Jumbotron className={classes.jumboBg}>
+            <h1 className="display-3 text-center wow animated infinite pulse shrikhand">GUAN'S CLICKY GAME!</h1>
+            <h4 className="text-center wow animated zoomIn text-white">Click on an image to earn points, but don't click on any more than once!</h4>
     </Jumbotron>
     )
 }
