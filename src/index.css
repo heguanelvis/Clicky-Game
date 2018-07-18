@@ -1,5 +1,23 @@
-body {
+@import url('https://fonts.googleapis.com/css?family=Muli|Ovo');
+
+/* font-family: 'Muli', sans-serif;
+font-family: 'Ovo', serif; */
+
+:root {
+    --ovo: 'Muli', sans-serif;
+    --muli: 'Muli', sans-serif;
+    --color1: #8EC9D2;
+    --color2: #B7B8BF;
+    --color3: #2E334A;
+}
+
+html, body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  background: #2E334A;
+}
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
 }

@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=Scope+One|Shrikhand');
+
+/* fonts */
+/* 
+font-family: 'Shrikhand', cursive;
+font-family: 'Scope One', serif;
+ */
+
+.jumboBg{
+    background-image: url("./jumbo-bg.jpg") !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+    min-height: 100% !important;
+    background-size: cover !important;
+    display: grid !important;
+    grid-template-rows: 1fr auto !important;
+    background-position: center center !important;
+    margin-bottom: 0px;
+}
+
+h1{
+    font-size: 5vh !important;
+    font-family: 'Shrikhand', cursive !important;
+}
+
+h4{
+    font-size: 3vh !important;
+    font-family: 'Scope One', serif;
+}

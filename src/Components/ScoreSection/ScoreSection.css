@@ -1,0 +1,11 @@
+.score-divider {
+    border-top: 4px solid var(--color2);
+    border-bottom: 1px solid darkcyan;
+}
+
+.score-section-instruction-text, .score-section-showscore-text{
+    color: var(--color1);
+    font-family: var(--moli);
+    font-size: 3vh;
+    text-shadow: 0.5px 0.5px darkgoldenrod;
+}

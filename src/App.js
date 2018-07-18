@@ -1,21 +1,104 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Jumbotron from "./Components/Jumbotron";
+import ScoreSection from "./Components/ScoreSection";
+import ClickyCard from "./Components/ClickyCard";
+import clickImages from "./clickyImages.json";
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+    state = {
+        clickImages,
+        score: 0,
+        topScore: 0,
+        clickedIds: [],
+        gameOver: false,
+    }
+
+    componentDidMount() {
+        this.shuffleCards(this.state.clickImages);
+    }
+
+    shuffleCards = (clickImages, clickedId) => {
+        const array = [...clickImages];
+        let i = array.length;
+        while (i > 0) {
+            let j = Math.floor(Math.random() * i);
+            i--;
+            let temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+        }
+        if (clickedId) {
+            let clickedIds = this.state.clickedIds;
+            clickedIds.push(clickedId)
+            this.setState({ 
+                clickImages: array, 
+                clickedIds: clickedIds
+            })
+        } else {
+            this.setState({
+                clickImages: array
+            })
+        }
+    }
+
+    handleClickImage = id => {
+        console.log("clicked the image No.", id);
+        let found = this.state.clickedIds.findIndex(e => e === id);
+        if (found >= 0) {
+            console.log("You clicked the wrong one! Next time!")
+            let score = this.state.clickedIds.length
+            if (score > this.state.topScore) {
+                this.setState({ 
+                    score: score, 
+                    topScore: score,
+                    clickedIds: [],
+                    gameOver: true
+                });
+            } else {
+                this.setState({ 
+                    score: score,
+                    clickedIds: [],
+                    gameOver: true
+                });
+            }
+        } else if (found === -1) {
+            let score = this.state.clickedIds.length + 1
+            if (this.state.gameOver === false && score > this.state.topScore) {
+                this.setState({ score: score, topScore: score});
+            } else if (this.state.gameOver === false) {
+                this.setState({ score: score});
+            } else {
+                this.setState({
+                    clickImages,
+                    score: 1,
+                    topScore: 1,
+                    clickedIds: [],
+                    gameOver: false,
+                })
+            }
+            setTimeout(() => {
+                this.shuffleCards(this.state.clickImages, id)
+            }, 100);
+        }
+    }
+
+    renderClickyCards = () => {
+        return this.state.clickImages.map(clickImage => (
+            <ClickyCard key={clickImage.id} id={clickImage.id} name={clickImage.name} src={clickImage.image} clicked={() => this.handleClickImage(clickImage.id)}/>
+        ))
+    }
+    
+    render() {
+        return (
+            <React.Fragment>
+                <Jumbotron />
+                <ScoreSection score={this.state.score} topScore={this.state.topScore}/>
+                <div className="row justify-content-around">
+                    {this.renderClickyCards()}
+                </div>
+            </React.Fragment>
+        )
+    }
 }
 
 export default App;
