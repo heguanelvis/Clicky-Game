@@ -1,33 +1,19 @@
 import React, { Component } from 'react';
-import classes from './App.css';
-import MyJumbotron from './Components/MyJumbotron';
-import ScoresDiv from './Components/ScoresDiv';
-import ClickyCard from './Components/ClickyCard';
-import clickImages from './clickyImages.json';
-import { Container, Row, Col } from 'reactstrap';
+import logo from './logo.svg';
+import './App.css';
 
 class App extends Component {
-  state = {
-    clickImages,
-    score: 0,
-    topScore: 0,
-  }
-
   render() {
     return (
-      <React.Fragment>
-        <MyJumbotron />
-        <ScoresDiv score={this.state.score} topScore={this.state.topScore}/>
-        <Container>
-        <Row>
-        {this.state.clickImages.map(clickImage => (
-            <Col xs="6" sm="4" md="3">
-            <ClickyCard id={clickImage.id} name={clickImage.name} src={clickImage.image}/>
-            </Col>
-        ))}
-        </Row>
-        </Container>
-      </React.Fragment>
+      <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <h1 className="App-title">Welcome to React</h1>
+        </header>
+        <p className="App-intro">
+          To get started, edit <code>src/App.js</code> and save to reload.
+        </p>
+      </div>
     );
   }
 }
