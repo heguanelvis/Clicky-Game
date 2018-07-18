@@ -3,6 +3,7 @@ import Jumbotron from "./Components/Jumbotron";
 import ScoreSection from "./Components/ScoreSection";
 import ClickyCard from "./Components/ClickyCard";
 import clickImages from "./clickyImages.json";
+import sweetAlert from "./utils/SweetAlert";
 
 class App extends Component {
     state = {
@@ -45,20 +46,30 @@ class App extends Component {
         console.log("clicked the image No.", id);
         let found = this.state.clickedIds.findIndex(e => e === id);
         if (found >= 0) {
-            console.log("You clicked the wrong one! Next time!")
+            sweetAlert("gameOver", "game-over-text", "You clicked the wrong one! Next time!");
             let score = this.state.clickedIds.length
-            if (score > this.state.topScore) {
+            if (score > this.state.topScore && this.state.score < 12) {
                 this.setState({ 
                     score: score, 
                     topScore: score,
                     clickedIds: [],
                     gameOver: true
                 });
-            } else {
+            } else if (this.state.score < 12) {
                 this.setState({ 
                     score: score,
                     clickedIds: [],
                     gameOver: true
+                }) ;
+            } else if (this.state.score === 12) {
+                sweetAlert("success", "success-text", "You are brilliant! Got all 12 correct!")
+                setTimeout(() => {
+                    this.setState({
+                        score: score,
+                        topScore: score,
+                        clickedIds: [],
+                        gameOver: true
+                    })
                 });
             }
         } else if (found === -1) {

@@ -12,12 +12,17 @@ font-family: 'Ovo', serif; */
 }
 
 html, body {
-  margin: 0;
-  padding: 0;
-  background: #2E334A;
+    margin: 0;
+    padding: 0;
+    background: #2E334A;
 }
 
 .row {
-  margin-left: 0;
-  margin-right: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.swal-game-over-text{
+    font-family: var(--muli);
+    color: var(--color2);
 }
