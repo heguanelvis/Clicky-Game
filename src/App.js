@@ -75,7 +75,7 @@ class App extends Component {
                 this.setState({
                     clickImages,
                     score: 1,
-                    topScore: 1,
+                    topScore: 12,
                     clickedIds: [],
                     gameOver: false,
                 })
@@ -92,7 +92,6 @@ class App extends Component {
                 this.setState({
                     clickImages,
                     score: 1,
-                    topScore: 1,
                     clickedIds: [],
                     gameOver: false,
                 })
