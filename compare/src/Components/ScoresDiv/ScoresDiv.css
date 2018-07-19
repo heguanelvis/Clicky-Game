@@ -1,9 +1,0 @@
-.bgScore{
-    background:lightsalmon;
-	border-top: 3px dotted whitesmoke;
-	border-bottom: 3px dotted whitesmoke;
-	box-shadow: inset 0 -1px 0 0 whitesmoke, inset 0 1px 0 0 whitesmoke, 0 1px 0 0 whitesmoke, 0 -1px 0 0 whitesmoke;
-	margin-bottom: 1px;
-    text-align: center;
-    color: whitesmoke;
-}
