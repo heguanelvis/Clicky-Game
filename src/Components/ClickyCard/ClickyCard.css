@@ -2,6 +2,7 @@
     width: 80%;
     height: 25vh;
     margin: 10%;
+    cursor: pointer;
 }
 
 .clicky-image:hover, .clicky-image:active, .clicky-image:focus {
