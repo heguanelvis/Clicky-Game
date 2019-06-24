@@ -1,11 +1,10 @@
-<h2 style="text-align: center">Cartoon Clicky!😱</h2>
-<hr>
-<h4 style="text-align: center">Click Your Favorite Cartoon Characters! Don't click on the same one twice! 🔱🔱🔱</h4>
-<hr>
+# Clicky Game
 
-<a href="https://heguanelvis.github.io/clicky-game/" target="_blank">Click Here to Play the Game</a>
+### Click Your Favorite Cartoon Characters! Don't click on the same one twice!
 
-### Detailed Instructions:
+[Play the Game](https://heguanelvis.github.io/clicky-game/)
+
+### Instructions:
 
 1. The game will show different images to the screen. You can click on any of them!
 
@@ -15,5 +14,5 @@
 
 4. Once the your made an incorrect guess, the game would halt, and you can click on a new image to restart.
 
-Now, it is time to click!!!!!!!!!!!!!☀️☀️☀️☀️☀️☀️☀️☀️☀️☀️☀️☀️☀️☀️☀️☀️
+
 
